@@ -1,0 +1,68 @@
+<section class="our-team pq-bg-grey pq-bg-img-1 exclusive">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="pq-section pq-style-1 text-center">
+          <span class="pq-section-sub-title"># expert team</span>
+          <h5
+            class="pq-section-title"
+            id="members"
+            data-high_text="Members"
+            data-title_text="Our Team Members"
+            data-rough_color="#fd4a18"
+            data-rough_type="underline"
+          >
+            Our Team Members
+          </h5>
+        </div>
+        <div class="pq-team">
+          <div
+            class="owl-carousel owl-loaded owl-drag"
+            data-dots="false"
+            data-nav="false"
+            data-desk_num="3"
+            data-lap_num="3"
+            data-tab_num="2"
+            data-mob_num="1"
+            data-mob_sm="1"
+            data-autoplay="true"
+            data-loop="true"
+            data-margin="30"
+          >
+            {% for e in employee %}
+              <div class="item">
+                <div class="pq-teambox-1">
+                  <div class="pq-team-img">
+                    <img src="{{e.avater.url}}" alt="team-image" />
+                  </div>
+                  <div class="pq-team-info pq-bg-white">
+                    <h5>Alex Jhon Martin</h5>
+                    <span class="pq-team-designation pq-text-primary"
+                      >Web Designer</span
+                    >
+                    <div class="pq-team-social">
+                      <ul>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

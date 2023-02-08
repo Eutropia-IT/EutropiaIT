@@ -1,0 +1,52 @@
+<section class="award">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="pq-section pq-style-1 text-center">
+          <span class="pq-section-sub-title">OUR Client</span>
+          <h5
+            class="pq-section-title"
+            id="awards"
+            data-high_text="Awards"
+            data-title_text="Business And Industry Awards Programs"
+            data-rough_color="#fd4a18"
+            data-rough_type="underline"
+          >
+            Who Made Their Business Possible With Us
+          </h5>
+        </div>
+
+        <div class="pq-award">
+          <div
+            class="owl-carousel owl-loaded owl-drag"
+            data-dots="false"
+            data-nav="false"
+            data-desk_num="5"
+            data-lap_num="4"
+            data-tab_num="3"
+            data-mob_num="1"
+            data-mob_sm="1"
+            data-autoplay="true"
+            data-loop="true"
+            data-margin="0"
+          >
+            {% for c in company %}
+              <div class="item">
+                <div class="pq-awardbox-1">
+                  <a href="{{c.company_url}}" target="_blank">
+                    <img
+                      class="pq-award-img"
+                      src="{{c.company_logo.url}}"
+                      alt="award-img"
+                    />
+                    <span class="pq-award-title">{{c.company_name}}</span>
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

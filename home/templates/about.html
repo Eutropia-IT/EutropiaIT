@@ -1,0 +1,71 @@
+{% extends './landingBase.html' %} 
+
+{% load static %}
+
+{% block title %}About{% endblock title %}
+
+{% block main %}
+<!--Breadcrumb Start-->
+{% include './components/Breadcrumb.html' %}
+<!--Breadcrumb End-->
+
+<!--About Us Start-->
+<section class="aboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="pq-section pq-style-1 text-left">
+                    <span class="pq-section-sub-title"># about us</span>
+                    <h5 class="pq-section-title" id="business" data-high_text="Business" data-title_text="Transform Your Business with Eutropia-IT's Expert Product Development" data-rough_color="#fd4a18" data-rough_type="underline">Transform Your Business with Eutropia-IT's Expert Product Development</h5>
+                    <p class="pq-section-description">Eutropia-IT is a technology company that specializes in providing custom software design and development services for businesses of all sizes.</p>
+                </div>
+                <ul class="pq-list-check pq-mb-30">
+                    <li class="pq-list-item">
+                        <a href="about-us.html">
+                            <i class="ion ion-android-done-all"></i>
+                            <span>Empowering Businesses with Cutting-Edge Technology</span>
+                        </a>
+                    </li>
+                    <li class="pq-list-item">
+                        <a href="about-us.html">
+                            <i class="ion ion-android-done-all"></i>
+                            <span>Utilizing the latest technologies and best software solutions</span>
+                        </a>
+                    </li>
+                    <li class="pq-list-item">
+                        <a href="about-us.html">
+                            <i class="ion ion-android-done-all"></i>
+                            <span>Empowering businesses with the latest technology to stay ahead of the game</span>
+                        </a>
+                    </li>
+                    <li class="pq-list-item">
+                        <a href="about-us.html">
+                            <i class="ion ion-android-done-all"></i>
+                            <span>Invest in a solution that will help you grow and succeed.</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-6 col-lg-6 mt-4 mt-lg-0">
+                <img src="{% static 'images/about-us/1.jpg' %}" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!--About Us End--> 
+
+
+ 
+
+
+
+<!--Services Start-->
+{% include './components/landing/Service.html' %}
+<!--Services End-->
+
+
+
+{% include './components/landing/Blog.html' %}
+
+{% endblock main %}
+

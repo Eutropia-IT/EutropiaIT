@@ -1,0 +1,101 @@
+{% extends './landingBase.html' %} 
+
+{% block title %}Project | AfkEbook{% endblock title %}
+
+{% block main %}
+<!--Breadcrumb Start-->
+{% include './components/Breadcrumb.html' %}
+<!--Breadcrumb End-->
+
+<!--Portfolio-Single Start-->
+<section class="portfolio-single pq-pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="container">
+                    <div class="row text-center ">
+                        <div class="col-lg-12"> <img src="{{project.cover.url}}" class="img-fluid pq-popvideo-img animated zoomIn"
+                                alt="home">
+                            <div class="pq-popup-video-block left">
+                                <div class="pq-video-icon">
+                                    <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="pq-video default popup-youtube"> <i aria-hidden="true" class="ion ion-play"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-4">
+                <div class="pq-portfolio-info-box">
+                    <div class="pq-porfolio-info-header">
+                        <h5 class="mt-4 mt-lg-0">Project Details</h5>
+                        <p>{{project.overview}}</p>
+                        <div class="pq-porfolio-info">
+                            <ul class="pq-info-list">
+                                <li>
+                                    <h5>Client</h5>
+                                    <span>Aarv Morison</span>
+                                </li>
+                                <li>
+                                    <h5>Project</h5>
+                                    <span>{{project.title}}</span>
+                                </li>
+                                <li>
+                                    <h5>Category</h5>
+                                    <span>{{project.category}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pq-social-media-grid">
+                    <a href="about-us.html"><i class="fab fa-facebook pq-text-white"></i></a>
+                    <a href="web-development.html"><i class="fab fa-twitter pq-text-white"></i></a>
+                    <a href="software-development.html"><i class="fab fa-youtube pq-text-white"></i></a>
+                    <a href="web-development.html"><i class="fab fa-pinterest pq-text-white"></i></a>
+                    <a href="web-development.html"><i class="fab fa-linkedin pq-text-white"></i></a>
+                </div>
+            </div>
+            
+            
+            <div class="col-lg-12">
+                <h2 class="pq-portfolio-single-title">Overview</h2>
+                {{project.description|safe}}
+            </div>
+        </div>
+    </div>
+</section>
+<!--Portfolio-Single End-->
+
+
+<!--Client Start-->
+<section class="client pq-bg-dark pq-bg-img-3 py-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="pq-client-style-2 pq-90">
+                    <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false" data-desk_num="5" data-lap_num="3" data-tab_num="3" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="30">
+                        
+                        {% for i in project.technology.all %}
+                            <div class="item">
+                                <div class="pq-clientbox-1">
+                                    <a href="#">
+                                        <img class="pq-client-img" src="{{i.technology_avater.url}}" alt="pq-client-img">
+                                        <img class="pq-client-hover-img" src="{{i.technology_avater.url}}" alt="pq-client-img">
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Client End-->
+
+
+{% endblock main %}

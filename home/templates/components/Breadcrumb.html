@@ -1,0 +1,32 @@
+<div class="pq-breadcrumb pq-bg-dark pq-bg-img-2">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <div class="pq-breadcrumb-title">
+                        <h1>
+                            {% if project %}
+                            {{project.title}}
+                            {% else %}
+                            {{banner.title}} 
+                            {% endif %}
+                        </h1>
+                    </div>
+                    <div class="pq-breadcrumb-container">
+                        <ol class="breadcrumb align-items-center">
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home me-2"></i>Home</a>
+                            </li>
+                            {% if project %}
+                                <li class="breadcrumb-item"><a href="{% url 'portfolio' %}">Portfolio</a>
+                                    <li class="breadcrumb-item active">{{project.title}}</li>
+                            {% else %}
+                                <li class="breadcrumb-item active">{{banner.title}}</li>
+                            {% endif %}
+                            
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

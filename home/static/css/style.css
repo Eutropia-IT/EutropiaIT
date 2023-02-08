@@ -2041,7 +2041,7 @@ footer#pq-footer {
 }
 
 footer#pq-footer{
-	background-image: url(../images/footer/1.png);
+	/* background-image: url(../images/footer/1.png); */
 	background-size: cover;
 	background-position: center center;
 }

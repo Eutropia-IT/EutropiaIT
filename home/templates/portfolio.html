@@ -1,0 +1,81 @@
+{% extends './landingBase.html' %} 
+
+
+
+{% block title %} Portfolio
+| EX {% endblock title %} 
+
+{% block custumCSS %}
+<style>
+  .capture_image {
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    cursor: n-resize;
+  }
+  .capture_image img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 400px;
+    transition: 8s all ease;
+  }
+  .capture_image img:hover {
+    object-position: bottom;
+  }
+</style>
+{% endblock custumCSS %} 
+
+{% block main %}
+<!--Breadcrumb Start-->
+{% include './components/Breadcrumb.html' %}
+
+<section class="3-columne-wide">
+  <div class="container-fluid">
+    <!-- <div class="pq-filters">
+            <div class="filters pq-filter-button-group">
+                <ul>
+                    <li class="active pq-filter-btn" data-filter="*">All</li>
+                    <li class="pq-filter-btn" data-filter=".14">Cloud</li>
+                    <li class="pq-filter-btn" data-filter=".5">Design</li>
+                    <li class="pq-filter-btn" data-filter=".15">Help Desk</li>
+                    <li class="pq-filter-btn" data-filter=".8">Technology</li>
+                </ul>
+            </div>
+        </div> -->
+
+    {% for p in portfolio %}
+        <div class="pq-grid" data-next_items="3" data-initial_items="6">
+        <div class="pq-grid-item pq-col-4 pq-crop-img 14 5">
+            <div class="pq-image-box pq-style-1">
+            <div class="capture_image">
+                <img src="{{p.full_capture.url}}" alt="" />
+            </div>
+
+            <div class="pq-image-box-meta pq-bg-grey">
+                <div class="pq-icon">
+                    <a href="{{p.site_url}}"><i class="ion flaticon-globe-1"></i></a>
+                </div>
+                <div class="pq-image-box-content">
+                    <h5 class="pq-text-dark">{{p.title}}</h5>
+                    <span class="pq-image-box-sub-title">
+                        <a href="{% url 'project' p.title %}" >Read More</a>
+                    </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+
+    <!-- <div class="text-center">
+            <a href="#" class="pq-button" id="showMore">
+                <div class="pq-button-block">
+                    <span class="pq-button-text">Load More</span>
+                </div>
+            </a>
+        </div> -->
+  </div>
+</section>
+
+{% endblock main %}

@@ -1,0 +1,112 @@
+{% extends './landingBase.html' %} 
+
+{% block title %}Service | Web{% endblock title %} 
+
+
+{% block main %}
+<!--Breadcrumb Start-->
+{% include './components/Breadcrumb.html' %}
+<!--Breadcrumb End-->
+
+<!--Software Start-->
+<section class="all-services">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 col-lg-4">
+        <div class="pq-widget">
+          <div class="pq-widget pq-widget-port p-0">
+            <div class="menu-service-menu-container">
+              <ul id="menu-service-menu" class="menu">
+                <li {% if request.path == "/services/web-development" %}class="current-menu-item"{% endif %}>
+                    <a href="{% url 'services' 'web-development' %}" aria-current="page"
+                      >Web Development</a
+                    >
+                  </li>
+                <li {% if request.path == "/services/app-development" %}class="current-menu-item"{% endif %}>
+                  <a href="{% url 'services' 'app-development' %}" aria-current="page"
+                    >App Development</a
+                  >
+                </li>
+
+                <li {% if request.path == "/services/product-design" %}class="current-menu-item"{% endif %}>
+                  <a href="{% url 'services' 'product-design' %}" aria-current="page"
+                    >Product Design</a
+                  >
+                </li>
+
+                <li {% if request.path == "/services/techenical-seo" %}class="current-menu-item"{% endif %}>
+                  <a href="{% url 'services' 'techenical-seo' %}" aria-current="page"
+                    >Techenical SEO</a
+                  >
+                </li>
+
+                <li {% if request.path == "/services/digital-marketing" %}class="current-menu-item"{% endif %}>
+                  <a href="{% url 'services' 'digital-marketing' %}" aria-current="page">Digital Marketing</a>
+                </li>
+                <li {% if request.path == "/services/it-consultaant" %}class="current-menu-item"{% endif %}>
+                  <a href="{% url 'services' 'it-consultaant' %}" aria-current="page">It Consultaant</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div id="media-image">
+          <a href="contact-us.html"><img src="http://127.0.0.1:8000/media/Employee/Avater/al_pic.jpg" alt="" /></a>
+        </div>
+        -->
+        <div class="pq-widget pq-download">
+          <h5 class="pq-title">Eutropia-IT</h5>
+          <p class="pq-description">
+             A technology company that specializes in providing custom software design and development services for businesses of all sizes.
+          </p>
+          <a href="{% url 'portfolio' %}" class="pq-button">
+            <div class="pq-button-block">
+              <span class="pq-button-text">View All</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-8 col-lg-8 mt-4 mt-lg-0">
+        
+        <h2 class="pq-heading mt-4">
+          {{heading}}
+        </h2>
+        <p class="pq-description">
+          {{hero_contant}}
+        </p>
+        <div class="row">
+           {% for i in key_feature %}
+                <div class="pq-fancy-box pq-fancybox-1">
+                    <div class="pq-fancy-media">
+                    <i class="ion ion-android-done-all"></i>
+                    </div>
+                    <div class="pq-fancybox-info">
+                    <h5 class="pq-fancy-box-title">{{i.key}}</h5>
+                    <p>
+                        {{i.contant}}
+                    </p>
+                    </div>
+                </div>
+          {% endfor %}
+         
+        </div>
+        
+        <div class="row border-0 pq-my-45 g-0">
+          <div class="col-lg-12">
+            <iframe
+              class="pq-video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              title="YouTube video player"
+              src="https://www.youtube.com/embed/XHOmBV4js_E?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;widget_referrer=https%3A%2F%2Fmedicate.peacefulqode.com%2Fhome-3%2F&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fmedicate.peacefulqode.com&amp;widgetid=1"
+              id="widget2"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Software End-->
+
+{% endblock main %}

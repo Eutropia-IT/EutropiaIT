@@ -1,0 +1,105 @@
+{% load static %}
+<header id="pq-header" class="pq-header-style-1 pq-has-sticky">
+  <div class="pq-top-header">
+    <div class="container-fluid"></div>
+  </div>
+  <div class="pq-bottom-header pq-has-sticky">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img
+                class="img-fluid logo"
+                src="{% static 'images/logos/logo_565x164.png' %}"
+                alt="Eutropia-IT"
+              />
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div id="pq-menu-contain" class="pq-menu-contain">
+                <ul id="pq-main-menu" class="navbar-nav ml-auto">
+                  <li class="menu-item {% if request.path == "/" %}current-menu-item{% endif %}">
+                    <a href="{% url 'index' %}">Home</a>
+                  </li>
+
+                  <li class="menu-item {% if request.path == "/about" %}current-menu-item{% endif %}">
+                    <a href="{% url 'about' %}">About</a>
+                  </li>
+
+                  <li class="menu-item {% if "portfolio" in request.path %}current-menu-item{% endif %}">
+                    <a href="{% url 'portfolio' %}">Portfolio</a>
+                  </li>
+
+                  <li class="menu-item {% if "services" in request.path %}current-menu-item{% endif %}">
+                    <a href="#">Services</a
+                    ><i class="fa fa-chevron-down pq-submenu-icon"></i>
+                    <ul class="sub-menu">
+                      <li class="menu-item {% if request.path == "/services/web-development" %}current-menu-item{% endif %}">
+                        <a href="{% url 'services' 'web-development'  %}">Web Development</a>
+                      </li>
+                      <li class="menu-item {% if request.path == "/services/app-development" %}current-menu-item{% endif %}">
+                        <a href="{% url 'services' 'app-development'  %}">App Development</a>
+                      </li>
+                      <li class="menu-item {% if request.path == "/services/product-design" %}current-menu-item{% endif %}">
+                        <a href="{% url 'services' 'product-design'  %}">Product Design</a>
+                      </li>
+                      <li class="menu-item  {% if request.path == "/services/techenical-seo" %}current-menu-item{% endif %}">
+                        <a href="{% url 'services' 'techenical-seo'  %}">Techenical SEO</a>
+                      </li>
+                      <li class="menu-item {% if request.path == "/services/digital-marketing" %}current-menu-item{% endif %}">
+                        <a href="{% url 'services' 'digital-marketing'  %}"
+                          >Digital Marketing</a
+                        >
+                      </li>
+                      <li class="menu-item {% if request.path == "/services/it-consultaant" %}current-menu-item{% endif %}">
+                        <a href="{% url 'services' 'it-consultaant'  %}"
+                          > It Consultaant</a
+                        >
+                      </li>
+                    </ul>
+                  </li>                 
+
+                  <li class="menu-item {% if 'blog' in request.path %}current-menu-item{% endif %}">
+                    <a href="{% url 'blogs' %}">Blog</a>
+                  </li>
+
+                  <li class="menu-item {% if 'blog' in request.path %}current-menu-item{% endif %}">
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pq-header-info-box">
+              <div class="pq-header-call">
+                <a href="tel:+180045647824">
+                  <i class="ion-ios-telephone"></i>
+                  <div class="pq-call-info">
+                    <h5>+1-800-456-478-24</h5>
+                    <span>Make a call</span>
+                  </div>
+                </a>
+              </div>
+              <a href="contact-us.html" class="pq-button">
+                <div class="pq-button-block">
+                  <span class="pq-button-text">Free Quote</span>
+                </div>
+              </a>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

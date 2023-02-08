@@ -1,0 +1,35 @@
+{% extends './landingBase.html' %} 
+
+{% block title %}Blog{% endblock title %}
+
+
+{% block main %}
+<!--Breadcrumb Start-->
+{% include './components/Breadcrumb.html' %}
+<!--Breadcrumb End-->
+
+
+<!--Blog-Single Start-->
+<section class="blog-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pq-blog-post">
+                    <div class="pq-post-media">
+                        <img src="{{blog.cover_image.url}}" alt="blog-img">
+                        <div class="pq-post-date">
+                            <a href="#"><span>{{b.publish_time|date:"d"}}</span>{{b.publish_time|date:"M"}}</a>
+                        </div>
+                    </div>
+                    <div class="pq-blog-contain">
+                        {{blog.content|safe}}
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</section>
+<!--Blog-Single End-->
+
+{% endblock main %}

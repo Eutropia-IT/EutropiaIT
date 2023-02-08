@@ -11,7 +11,7 @@ jQuery('.pq-section-title').each(function () {
     // console.log(main_text);
 
     result = main_text.match(regEx);
-    console.log(result);
+ 
 
     result[0] = result[0].replace(/\s/g, '');
     // console.log(result[0]);
