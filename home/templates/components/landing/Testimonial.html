@@ -9,30 +9,29 @@
                 </div>
                 <div class="pq-testimonial pq-owl-testimonial-1">
                     <div class="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false" data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="">
+                        {% for i in review %}
                         <div class="item">
                             <div class="pq-testimonial-box pq-owl-testimonial-style-1">
                                 <div class="pq-testimonial-content">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form, by injected humour, randomised words which don't look even slightly believable. </p>
+                                    <p>{{i.review}}</p>
                                 </div>
                                 <div class="pq-testimonial-info">
                                     <div class="pq-testimonial-img">
-                                        <img src="#" alt="testimonial-image">
+                                        <img src="{{i.client.avater.url}}" alt="testimonial-image">
                                         <div class="pq-testimonial-meta">
-                                            <h5>Alex Jhon Martin </h5>
-                                            <span>Web Designer</span>
+                                            <h5>{{i.client.client.first_name}} {{i.client.client.last_name}}</h5>
+                                            <span>{{i.client.company_name}}</span>
                                             <div class="pq-testimonial-star">
+                                                {% for j in i.reating %}
                                                 <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        {% endfor %}
                     </div>
                 </div>
             </div>

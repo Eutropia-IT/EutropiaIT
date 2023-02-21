@@ -18,7 +18,7 @@
                                 alt="home">
                             <div class="pq-popup-video-block left">
                                 <div class="pq-video-icon">
-                                    <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="pq-video default popup-youtube"> <i aria-hidden="true" class="ion ion-play"></i>
+                                    <a href="{{project.video_demo}}" class="pq-video default popup-youtube"> <i aria-hidden="true" class="ion ion-play"></i>
                                     </a>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                             <ul class="pq-info-list">
                                 <li>
                                     <h5>Client</h5>
-                                    <span>Aarv Morison</span>
+                                    <span>{{project.client_name.client.first_name}} {{project.client_name.client.last_name}}</span>
                                 </li>
                                 <li>
                                     <h5>Project</h5>
@@ -51,11 +51,7 @@
                     </div>
                 </div>
                 <div class="pq-social-media-grid">
-                    <a href="about-us.html"><i class="fab fa-facebook pq-text-white"></i></a>
-                    <a href="web-development.html"><i class="fab fa-twitter pq-text-white"></i></a>
-                    <a href="software-development.html"><i class="fab fa-youtube pq-text-white"></i></a>
-                    <a href="web-development.html"><i class="fab fa-pinterest pq-text-white"></i></a>
-                    <a href="web-development.html"><i class="fab fa-linkedin pq-text-white"></i></a>
+                    <a href="{{project.site_url}}" target="_blank"><i class="ion flaticon-globe-1 pq-text-white"></i></a>
                 </div>
             </div>
             

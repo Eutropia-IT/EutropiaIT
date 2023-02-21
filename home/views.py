@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.http import Http404
 
 # model
-from dashboard.models import Client, Project, Employee, Blog
+from dashboard.models import Client, Project, Employee, Blog, Review
 # Create your views here.
 
 # service
@@ -14,15 +14,17 @@ def index(request):
     context = {
         "company" : Client.objects.all(),
         "project" : Project.objects.all(),
-        "employee" : Employee.objects.all()
+        "employee" : Employee.objects.all(),
+        "review" : Review.objects.all()
     }
     return render(request, 'index.html', context)
 
 def about(request):
     context = {
         "banner" : {
-            "title" : "About US"
-        }
+            "title" : "About US",
+        },
+        "blog" : Blog.objects.all()
     }
     return render(request, 'about.html', context)
 

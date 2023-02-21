@@ -17,7 +17,8 @@ class Client(models.Model):
     company_name = models.CharField(max_length=100)
     company_address = models.CharField(max_length=100)
     company_url = models.URLField()
-    company_logo = models.ImageField(null=True, upload_to='Company_Logo')
+    company_logo = models.ImageField(null=True, upload_to='Client/Company_Logo')
+    avater = models.ImageField(null=True,  upload_to='Client/Avater')
 
     def __str__(self):
         return self.company_name if self.company_name else ''
@@ -43,7 +44,17 @@ class Employee(models.Model):
     employee = models.OneToOneField(User,related_name='employee', null=True, on_delete=models.SET_NULL)
     is_display = models.BooleanField(default=False)
     designation = models.CharField(max_length=50)
+    fb = models.URLField(null=True)
+    twiter = models.URLField(null=True)
+    git = models.URLField(null=True)
+    lindin = models.URLField(null=True)
     avater = models.ImageField(null=True,  upload_to='Employee/Avater')
+
+class Review(models.Model):
+    client = models.ForeignKey(Client, null=True, on_delete=models.SET_NULL)
+    review = models.TextField(null=True)
+    reating = models.CharField(null=True, max_length=5)
+
 
 class Blog(models.Model):
     title = models.CharField(max_length=50, unique=True)

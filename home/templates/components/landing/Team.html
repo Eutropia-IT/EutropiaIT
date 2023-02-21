@@ -36,23 +36,23 @@
                     <img src="{{e.avater.url}}" alt="team-image" />
                   </div>
                   <div class="pq-team-info pq-bg-white">
-                    <h5>Alex Jhon Martin</h5>
+                    <h5>{{e.employee.first_name}} {{e.employee.last_name}}</h5>
                     <span class="pq-team-designation pq-text-primary"
-                      >Web Designer</span
+                      >{{e.designation}}</span
                     >
                     <div class="pq-team-social">
                       <ul>
                         <li>
-                          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                          <a href="{{e.fb}}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                         </li>
                         <li>
-                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                          <a href="{{e.twiter}}" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                         </li>
                         <li>
-                          <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                          <a href="{{e.git}}" target="_blank"><i class="fa-brands fa-git"></i></a>
                         </li>
                         <li>
-                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                          <a href="{{e.lindin}}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </li>
                       </ul>
                     </div>

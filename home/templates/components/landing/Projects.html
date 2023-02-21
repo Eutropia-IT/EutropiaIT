@@ -52,7 +52,7 @@
                       src="{{p.cover.url}}"
                       alt="portfolio-img"
                     />
-                    <a href="portfolio-single.html">
+                    <a href="{% url 'project' p.title %}">
                       <div class="pq-portfolio-icon">
                         <i class="ion flaticon-globe-1"></i>
                       </div>
@@ -61,11 +61,11 @@
                   <div class="pq-portfolio-info">
                     <div class="pq-portfolio-inner-info">
                       <h5>
-                        <a href="portfolio-single.html">Professional Services</a>
+                        <a href="{% url 'project' p.title %}">{{p.title}}</a>
                       </h5>
                       <div class="pq-portfolio-link">
-                        <a href="portfolio-single.html">Cloud</a>
-                        <a href="portfolio-single.html">Design</a>
+                        <a href="{% url 'project' p.title %}">Details</a>
+                        
                       </div>
                     </div>
                   </div>
